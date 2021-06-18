@@ -1,0 +1,6 @@
+[build]
+target = "bpfel-unknown-none"
+
+[alias]
+b = "build -Z build-std=core,alloc"
+c = "check -Z build-std=core,alloc"
