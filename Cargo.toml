@@ -5,7 +5,7 @@ authors = ["lwintermelon <returnhs@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-cty = { git="https://github.com/lwintermelon/cty" }
+cty = { package = "aya-bpf-cty", git = "https://github.com/aya-rs/aya.git" }
 
 
 [profile.release]
@@ -15,6 +15,5 @@ codegen-units = 1
 panic = 'abort'
 
 [profile.dev]
-# There was a problem when loading if overflow-checks = true
 overflow-checks = false
 panic = 'abort'

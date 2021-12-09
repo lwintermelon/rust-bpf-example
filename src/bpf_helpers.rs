@@ -8,5 +8,5 @@ pub fn bpf_printk<T, const LEN: usize>(fmt: [u8; LEN], value: T) -> i64 {
         fmt_size: cty::uint32_t,
         ...
     ) -> cty::c_long = unsafe { mem::transmute(BPF_FUNC_trace_printk as usize) };
-    unsafe { bpf_trace_printk(fmt.as_ptr(), LEN as cty::uint32_t, value) }
+    unsafe { bpf_trace_printk(fmt.as_ptr() as *const i8, LEN as cty::uint32_t, value) }
 }
